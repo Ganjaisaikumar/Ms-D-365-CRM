@@ -143,6 +143,7 @@ function hideSection(executionContext) {
     var formContext = executionContext.getFormContext();
 
     formContext.ui.tabs.get("tab_2").sections.get("tab_2_section_1").setVisible("False");
+
     
 }
 function getRecordGuid(executionContext) {
