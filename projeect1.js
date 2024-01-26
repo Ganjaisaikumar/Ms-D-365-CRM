@@ -10,7 +10,7 @@ function onchangeofname() {
 function onchangeofemail(executionContext) {
     var formContext = executionContext.getFormContext();
     var email = formContext.getAttribute("new_emailaddress").getValue();
-    alert("Email Address Changed!!");
+   // alert("Email Address Changed!!");
 
 
 }
@@ -26,7 +26,7 @@ function optionsetofBanktype(executionContext) {
 
     var formContext = executionContext.getFormContext();
     var op = formContext.getAttribute("new_accountinfo").getValue();
-    alert("Value is " + op);
+    //alert("Value is " + op);
     if (op == "100000000") {
 
         formContext.getAttribute("new_accountnumber").setValue(123);
@@ -49,7 +49,7 @@ function disableautoSave(executionContext)// preventing of form auto save
 {
 
     var saveEvent = executionContext.getEventArgs();
-    alert(saveEvent.getSaveMode());
+   // alert(saveEvent.getSaveMode());
     if (saveEvent.getSaveMode() == 70) {// when autosave funtion triggered the value will reurn 70 or 1!!
         saveEvent.preventDefault();
     }
@@ -98,7 +98,7 @@ function onDob(executionContext) {
     var min_years = new Date(today.getFullYear() - 21, today.getMonth(), today.getDate(), today.getHours(), today.getMinutes());
     var age = today.getFullYear() - birthDate.getFullYear();
     var msg = formContext.getControl("new_dob");
-    alert("Age is " + age);
+    //alert("Age is " + age);
     if (birthDate > min_years) {
         msg.setNotification("Min age should be 21!!", "birthDate");
     }
@@ -116,9 +116,9 @@ function forlookUp(executionContext) {
         var name = formContext.getAttribute("new_banklookup").getValue()[0].name;
         var id = formContext.getAttribute("new_banklookup").getValue()[0].id;
         var entity_name = formContext.getAttribute("new_banklookup").getValue()[0].entityType;
-        alert("Guid is" + id);
-        alert("Name is" + name);
-        alert("Enirty Name" + entity_name);
+       // alert("Guid is" + id);
+       // alert("Name is" + name);
+       // alert("Enirty Name" + entity_name);
 
     }
 
@@ -135,7 +135,7 @@ function setdefaultForLookUp(executionContext) {
     
     formContext.getAttribute("new_banklookup").setValue(name1);
 
-    alert("Name is" + name1[0].name);
+    //alert("Name is" + name1[0].name);
 
 }
 
@@ -151,7 +151,7 @@ function getRecordGuid(executionContext) {
     
     var recordGuid = formContext.data.entity.getId();
 
-    alert("Record GUID: " + recordGuid);
+    //alert("Record GUID: " + recordGuid);
 }
 
 
